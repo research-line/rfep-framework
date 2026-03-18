@@ -51,8 +51,7 @@ The RFEP framework serves as the theoretical backbone for the following domain p
 | Hodge Conjecture via FST | [10.5281/zenodo.19087439](https://doi.org/10.5281/zenodo.19087439) |
 | BSD Conjecture via FST | [10.5281/zenodo.19087443](https://doi.org/10.5281/zenodo.19087443) |
 | P vs NP via FST | [10.5281/zenodo.19056809](https://doi.org/10.5281/zenodo.19056809) |
-| FST-RH Trilogy (Riemann Hypothesis) | [10.5281/zenodo.19035845](https://doi.org/10.5281/zenodo.19035845) |
-| CRM I-IV (Cosmic Recursion Model) | [10.5281/zenodo.18728936](https://doi.org/10.5281/zenodo.18728936) |
+
 
 ## Related Repositories
 
