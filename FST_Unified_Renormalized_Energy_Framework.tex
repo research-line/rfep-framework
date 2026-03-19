@@ -62,9 +62,10 @@ This paper operates at three distinct claim levels, which the reader should care
 \begin{description}
 \item[Level 0 (Framework):] The RFEP (Proposition~\ref{prop:rfep-to-pattern-a}), Pattern A (Principle~\ref{thm:pattern-a-universality}), and the multi-parameter corollary (Proposition~\ref{prop:rfep-multi}) are self-contained mathematical results. Their proofs depend only on convexity theory and functional analysis. \emph{Status: proven.}
 \item[Level 1 (Primary instantiation):] The application to the Riemann Hypothesis (Section~\ref{sec:fst-rh}) invokes the framework to organise the proof architecture of the companion papers~\cite{Geiger2026a,Geiger2026b,Geiger2026c}. The spectral gap constant $c_{\mathrm{gap}} \geq 0.5$ is verified numerically. \emph{Status: established with numerical verification.}
-\item[Level 2 (Domain instantiations):] The applications to Yang--Mills, Navier--Stokes, turbulence, dark energy, Hodge, BSD, and P vs NP are structural programmes, not completed proofs. Each instantiation identifies the specific open mathematical problem that would need to be solved. The most developed Level~2 instantiation is Yang--Mills, which provides a conditional mass gap theorem (under explicit tail, transport, and symmetry assumptions) together with a hierarchical renormalisation group programme and quantitative Poincar\'e bounds. The P vs NP instantiation identifies three concrete ``bridge targets'' (instance compression, proof complexity, PRG-based families) whose resolution would upgrade the entropic separation conjecture from a reformulation to a conditional proof. \emph{Status: programmatic.}
+\item[Level 2 (Domain instantiations):] Level~2 results range from journal-ready (Turbulence: the DFC$\Rightarrow$NL' chain is rigorously proven, reducing empirical input to forward cascade alone) through conditional theorems with strong numerics (Yang--Mills: Kingman--Lyapunov $\lambda < 0$ confirmed for all $\beta$; Navier--Stokes: BV selection validated on three attractors) to structural frameworks (Dark Energy: screening numerically validated; BSD, Hodge, P\,vs\,NP: structural analyses and reformulations). The P vs NP instantiation identifies three concrete ``bridge targets'' (instance compression, proof complexity, PRG-based families) whose resolution would upgrade the entropic separation conjecture from a reformulation to a conditional proof. \emph{Status: ranges from journal-ready to programmatic (see individual papers).}
 \end{description}
 The modular architecture (Remark~\ref{rem:independence}) ensures that an error at Level~2 does not affect Levels~0 or~1.
+We explicitly distinguish between \emph{circular conditionality} (where assumptions encode the conclusion) and \emph{structural reduction} (where assumptions identify precise, independently attackable sub-problems). Each domain paper specifies which assumptions are independently verifiable.
 \end{remark}
 
 \section{The Core Problem Matrix: Bottlenecks K1--K5}
@@ -224,6 +225,7 @@ A stability problem exhibits Pattern~A structure if the following three conditio
     \item \textbf{Second-order dominance:} The second-order resolvent coefficients dominate and can be neutralized via a finite-rank gauge or topological shift.
 \end{enumerate}
 This principle is verified for all eight instantiations of the framework (see table below), including the three application cases FST-I (thermodynamic fine-tuning), FST-II (chemical replicator dynamics), and FST-III (biological cooperation). The converse direction---that every stability problem admitting a finite-rank gauge-resolution necessarily exhibits Pattern~A---is conjectural and motivated by the universality of the RFEP mechanism (Proposition~\ref{prop:rfep-to-pattern-a} establishes the forward implication; the converse remains open).
+Pattern~A is a \emph{diagnostic taxonomy}, not a proof strategy: it identifies the structural location of the difficulty but does not itself solve it. Its value lies in reducing search space.
 \end{principle}
 
 \begin{principle}[Pattern A Master Stability]
@@ -331,6 +333,24 @@ Condition (DS3) is not automatic. Two standard mechanisms cause its failure:
 In each domain instantiation, DS3 must be verified separately using domain-specific structure (compact embedding, tightness, or confinement). This is by design: DS3 encodes the \emph{geometric} content of each problem, while DS1--DS2 encode the \emph{variational} content.
 \end{remark}
 
+\begin{remark}[Falsifiability of Pattern A]
+\label{rem:pattern-a-falsifiability}
+Pattern~A (Functional Positivity under Gauge Constraint) is not a tautology despite its broad applicability. It makes a \emph{testable structural prediction}: every resolution of the problems in this programme must proceed via second-order resolvent dominance---i.e., the decisive mechanism operates at the level of curvature (Hessians, second variations, spectral gaps) rather than at the level of first-order conditions (stationarity, conservation laws, functional equations).
+
+\textbf{Falsification criterion:} Pattern~A would be falsified if a Millennium Problem were resolved via a purely first-order argument---one that establishes the result without invoking any second-order structure (no spectral gaps, no Poincar\'e inequalities, no Hessian positivity, no curvature bounds). More precisely:
+
+\textbf{Necessary conditions for a Pattern A instance.} A problem qualifies as a Pattern~A instance only if:
+\begin{enumerate}
+\item[(PA1)] The solution space admits a natural \emph{gauge symmetry} or \emph{redundancy} that makes first-order conditions degenerate (the ``neutral leading order'' of the instantiation table above).
+\item[(PA2)] The degeneracy is resolved by a \emph{second-order mechanism} (spectral gap, convexity, positivity) that selects the physical solution from the gauge-equivalence class.
+\item[(PA3)] The second-order mechanism is \emph{non-perturbative}: it cannot be captured by a finite Taylor expansion around a reference state.
+\end{enumerate}
+
+A problem that admits a perturbative first-order resolution (e.g., a spectral gap that follows directly from a maximum principle without variational analysis) would \emph{not} be a Pattern~A instance, and solving it would not confirm the framework.
+
+This falsifiability distinguishes Pattern~A from a vacuous meta-principle: it predicts a \emph{specific proof architecture} (second-order dominance) that can be checked against any proposed resolution.
+\end{remark}
+
 \begin{remark}[Instantiations across the FST programme]
 \label{rem:selection-instantiations}
 The Selection by Positivity conjecture unifies all open problems in the FST programme. In each case, conditions \textup{(SP1)--(SP2)} are established or plausible, while the critical gap is \textup{(SP3)} ($\Gamma$-stability) or \textup{(SP4)} (uniform contraction):
@@ -341,9 +361,9 @@ The Selection by Positivity conjecture unifies all open problems in the FST prog
 \textbf{Problem} & $X$ / $\tau_{\mathrm{reg}}$ & $F$ & $R_\varepsilon$ / $S_t$ & $d$ & \textbf{Gap} \\
 \hline
 RH & $L^2$ / $H^1$ & RFEP & Resolvent avg. & Resolvent & SP3 \\
-YM & Gauge configs & KL + Wilson & Block-spin RG & Birkhoff & SP4 ($\delta$ uniform) \\
+YM & Gauge configs & KL + Wilson & Block-spin RG & Birkhoff & SP4 ($\delta$ uniform; Kingman $\lambda < 0$ all $\beta$) \\
 NS & $L^2$ / $H^1$ & $H(u|A)$ & Time-avg.\ Prox & Moreau--Yosida & SP3 (reach$_{\mathrm{avg}}$) \\
-TU & $\ell^2$ spectra & $F[E]$ & Shell avg.\ (DFC) & Entropic & SP2 (NL rigor.) \\
+TU & $\ell^2$ spectra & $F[E]$ & Shell avg.\ (DFC) & Entropic & SP2 (DFC$\Rightarrow$NL' proven; only DFC1 empirical) \\
 DE & Density profiles & $\Phi[\rho]$ & Callan--Symanzik & $W_2$ & SP4 (screening) \\
 Hodge & $H^{p,p}$ & $(-1)^p Q_L$ & Galois avg. & $Q_L$-metric & SP2 (non-bilinear) \\
 BSD & $E(\mathbb{Q})$ & $\langle\cdot,\cdot\rangle_{\mathrm{NT}}$ & Disc avg.\ of $L$ & Height & SP3 (rank $\geq 2$) \\
@@ -386,7 +406,7 @@ The eight instantiations of Principle~\ref{thm:pattern-a-universality} are:
 \textbf{Problem} & \textbf{Control parameter} & \textbf{Gauge mechanism} & \textbf{Uniqueness} \\
 \hline
 RH    & Riemann sum cutoff          & Shift parity                                    & unique (spectral) \\
-YM    & Lattice spacing             & Topological sector                              & unique (convexity) \\
+YM    & Lattice spacing             & Block-spin RG + Birkhoff contraction            & unique (convexity) \\
 NS    & Enstrophy scale ($H^1$)     & Minimizer selection + enstrophy dissipation      & unique (attractor) \\
 TU    & Cascade scale               & K41 flux constraint + energy injection (ND)      & unique (K41 sel.) \\
 DE    & IR cutoff                   & Vacuum sector                                   & unique (vacuum) \\
@@ -578,7 +598,7 @@ This reduction demonstrates that the infinite complexity of the primes is ``topo
 
 The Renormalized Free Energy Framework replaces the search for global smoothness or positivity with the construction of local, finite-rank certificates. By identifying the common structural bottleneck---Pattern~A stability under gauge constraint---we provide a unified structural approach to several major open problems in mathematics and physics.
 
-We emphasise the distinction between what has been \emph{established} and what remains \emph{programmatic}. Specifically: the FST-RH instantiation (Section~\ref{sec:fst-rh}) provides, as detailed in the companion papers~\cite{Geiger2026a,Geiger2026b,Geiger2026c}, a rigorous development of the Riemann Hypothesis within this framework, including computer-assisted numerical verification, serving as the reference implementation. The instantiations for Yang--Mills, Navier--Stokes, Turbulence, and Dark Energy are at varying stages of completion: each identifies the relevant Pattern~A structure and reduces the problem to specific technical hypotheses (continuum limit for YM, projection regularity + dissipation dominance at $H^1$-level for NS, entropy-compatibility + non-degenerate energy injection for TU, minimality axioms for DE). Dedicated companion papers for the NS and TU cases are in preparation~\cite{Geiger2026-NS,Geiger2026-TU}; the DE and YM instantiations are at an earlier stage and will be developed in future work. The Hodge instantiation yields the negative result that arithmetic positivity reduces exactly to Deligne's absoluteness (AP$^p$\,=\,AbsHodge$^p$), delineating a structural limit of the positivity approach \cite{Geiger2026-Hodge}. The BSD instantiation establishes a normal-form theorem complete for rank~$\leq 1$ via Gross--Zagier and Kolyvagin, with rank~$\geq 2$ requiring higher Gross--Zagier formulae \cite{Geiger2026-BSD}. The P\,vs\,NP instantiation proves the equivalence ESC\,$\Leftrightarrow$\,P\,$\neq$\,NP, identifying the uniformity bridge as the central obstruction \cite{Geiger2026-PvsNP}.
+We emphasise the distinction between what has been \emph{established} and what remains \emph{programmatic}. Specifically: the FST-RH instantiation (Section~\ref{sec:fst-rh}) provides, as detailed in the companion papers~\cite{Geiger2026a,Geiger2026b,Geiger2026c}, a rigorous development of the Riemann Hypothesis within this framework, including computer-assisted numerical verification, serving as the reference implementation. The instantiations for Yang--Mills, Navier--Stokes, Turbulence, and Dark Energy are at varying stages of completion: each identifies the relevant Pattern~A structure and reduces the problem to specific technical hypotheses (continuum limit for YM, projection regularity + dissipation dominance at $H^1$-level for NS, entropy-compatibility + non-degenerate energy injection for TU, minimality axioms for DE). Dedicated companion papers for the NS and TU cases have undergone multiple review cycles (NS: 5 review cycles completed; TU: journal-ready, with the DFC$\Rightarrow$NL' chain rigorously proven)~\cite{Geiger2026-NS,Geiger2026-TU}; the YM instantiation provides conditional theorems with Kingman--Lyapunov confirmation for all $\beta$~\cite{Geiger2026-YM}, and the DE instantiation has screening numerically validated~\cite{Geiger2026-DE}. The Hodge instantiation yields the negative result that arithmetic positivity reduces exactly to Deligne's absoluteness (AP$^p$\,=\,AbsHodge$^p$), delineating a structural limit of the positivity approach \cite{Geiger2026-Hodge}. The BSD instantiation establishes a normal-form theorem complete for rank~$\leq 1$ via Gross--Zagier and Kolyvagin, with rank~$\geq 2$ requiring higher Gross--Zagier formulae \cite{Geiger2026-BSD}. The P\,vs\,NP instantiation proves the equivalence ESC\,$\Leftrightarrow$\,P\,$\neq$\,NP, identifying the uniformity bridge as the central obstruction \cite{Geiger2026-PvsNP}.
 
 Closing these remaining gaps requires domain-specific techniques that complement, but do not follow from, the universal framework alone.
 
