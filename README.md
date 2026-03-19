@@ -4,7 +4,7 @@
 
 **The Renormalized Free-Energy Principle (RFEP): A Unified Mathematical Framework for Structural Bottleneck Resolution**
 
-Version 1.5 -- with Dissipative Selection Principle (DS1-DS3) and Pattern B (Flow Selection)
+Version 1.6 -- with Pattern A Falsifiability Criterion
 
 ## Overview
 
@@ -19,38 +19,77 @@ This repository contains both the English and German versions of the framework p
 
 ## Zenodo
 
-- **Current Version (v1.5):** [10.5281/zenodo.19087378](https://doi.org/10.5281/zenodo.19087378)
+- **Current Version (v1.6):** [10.5281/zenodo.19106213](https://doi.org/10.5281/zenodo.19106213)
 - **Concept DOI (all versions):** [10.5281/zenodo.19036190](https://doi.org/10.5281/zenodo.19036190)
 
+## Domain Proof Papers -- Current Status
+
+| Paper | Zenodo | Status | Open Problem | Next Step |
+|-------|--------|--------|------------|------------------|
+| **Turbulence** | [v1.3](https://doi.org/10.5281/zenodo.19056813) | Journal-ready | DFC1 empirical (only input) | Figures + falsification protocol |
+| **Dark Energy** | [v1.6](https://doi.org/10.5281/zenodo.19036235) | Framework Note | Hu-Sawicki parameters quantitatively open | MCMC fit against DESI+Planck+Cassini |
+| **Yang-Mills** | [v2.1](https://doi.org/10.5281/zenodo.19087433) | Conditional | Analytical proof of lambda < 0 | Doeblin minorisation programme |
+| **Navier-Stokes** | [v2.1](https://doi.org/10.5281/zenodo.19087449) | Conditional | Assumption G2 (projection regularity) | Independent geometric verification |
+| **NS Log-Distance** | [v1.3](https://doi.org/10.5281/zenodo.19056807) | Proof of Life verified | TLL for 3D NS analytically open | Kuramoto-Sivashinsky / reaction-diffusion |
+| **BSD** | [v1.1](https://doi.org/10.5281/zenodo.19087443) | Reformulation | Higher Gross-Zagier (rank >= 2) | Rank 2-4 numerics, conditional labelling |
+| **Hodge** | [v1.1](https://doi.org/10.5281/zenodo.19087439) | No-Go Theorem | = Deligne's question (1982) | Prismatic cohomology / AP4 |
+| **P vs NP** | [v1.2](https://doi.org/10.5281/zenodo.19056809) | Reformulation | Uniformity Bridge | Instance compression formalisation |
+
+## Proof Architecture
+
+```
+                    Framework (Pattern A)
+                    +-- DS1-DS3 (Dissipative Selection)
+                    +-- Second-Order Resolvent Dominance
+                         |
+          +--------------+--------------+
+          |              |              |
+     PROVEN        CONDITIONAL        OPEN
+     (rigorous)   (reduced to       (= open
+                  threshold axiom)   research)
+          |              |              |
+         TU:            YM:           BSD:
+      DFC => NL'    Doeblin a > 0   Rank >= 2
+      (journal)     (Kingman l < 0)  Gross-Zagier
+                        |
+         DE:           NS:          Hodge:
+      Screening    G2 (projection)  Deligne's
+      (validated)  G3 (Gronwall)    question
+                        |
+        NS-LDI:       PvNP:
+      TLL + LDI     Uniformity
+      (Lorenz OK)    Bridge
+```
+
 ## Changelog
+
+### v1.6
+- Pattern A falsifiability criterion (rem:pattern-a-falsifiability)
+- Three necessary conditions PA1-PA3 for Pattern A instances
+- Explicit falsification criterion via first-order resolution
 
 ### v1.5
 - Theorem (Dissipative Selection Principle DS1-DS3) as formal meta-theorem
 - Pattern B (Flow Selection) defined for Dark Energy instantiation
 - DS3 failure examples (translation escape, bubbling)
 - DS genealogy remark (Sandier-Serfaty, MRS, AGS)
-- Integrated contraction as universal transfer mechanism
 - Pattern A table extended with Hodge, BSD, P-vs-NP entries
-- 8 new bibliography entries (Kirk, BBD, Sturm, Drivas + 4 domain papers)
-- Conclusion updated with all domain instantiations
 
 ### v1.4
-- 5 systematic review cycles (score: 6.5 → 9.4)
+- 5 systematic review cycles (score: 6.5 -> 9.4)
 
-## Companion Papers
-
-The RFEP framework serves as the theoretical backbone for the following domain proofs:
+## Companion Papers (Concept DOIs)
 
 | Paper | Concept DOI |
 |-------|-------------|
-| Yang-Mills Mass Gap via FST | [10.5281/zenodo.19087433](https://doi.org/10.5281/zenodo.19087433) |
+| Yang-Mills Mass Gap | [10.5281/zenodo.19087433](https://doi.org/10.5281/zenodo.19087433) |
 | Navier-Stokes Skeleton | [10.5281/zenodo.19087449](https://doi.org/10.5281/zenodo.19087449) |
-| Navier-Stokes Log-Distance Index (NS-LDI) | [10.5281/zenodo.19056807](https://doi.org/10.5281/zenodo.19056807) |
-| Turbulence via FST (TU) | [10.5281/zenodo.19056813](https://doi.org/10.5281/zenodo.19056813) |
-| Dark Energy via FST (DE) | [10.5281/zenodo.19036235](https://doi.org/10.5281/zenodo.19036235) |
-| Hodge Conjecture via FST | [10.5281/zenodo.19087439](https://doi.org/10.5281/zenodo.19087439) |
-| BSD Conjecture via FST | [10.5281/zenodo.19087443](https://doi.org/10.5281/zenodo.19087443) |
-| P vs NP via FST | [10.5281/zenodo.19056809](https://doi.org/10.5281/zenodo.19056809) |
+| Navier-Stokes Log-Distance Integrability | [10.5281/zenodo.19056807](https://doi.org/10.5281/zenodo.19056807) |
+| Turbulence | [10.5281/zenodo.19056813](https://doi.org/10.5281/zenodo.19056813) |
+| Dark Energy | [10.5281/zenodo.19036235](https://doi.org/10.5281/zenodo.19036235) |
+| Hodge Conjecture | [10.5281/zenodo.19087439](https://doi.org/10.5281/zenodo.19087439) |
+| BSD Conjecture | [10.5281/zenodo.19087443](https://doi.org/10.5281/zenodo.19087443) |
+| P vs NP | [10.5281/zenodo.19056809](https://doi.org/10.5281/zenodo.19056809) |
 
 
 ## Related Repositories
